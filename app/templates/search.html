@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action='' method='post' novalidate>
+	{{ form.hidden_tag() }}
+	<div class="form-row">
+		{{ form.query.label }}
+		{{ form.query(size=140) }}
+	</div>
+	<div class="form-row">
+		{{ form.is_url() }} {{ form.is_url.label }}
+	</div>
+	<div class="form-row">
+		{{ form.search_button() }}
+	</div>
+</form>
+{% endblock %}

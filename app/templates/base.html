@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% if title %}{{ title }} - {% endif %}Qwiki</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1,shrink-to-fit=no'>
+  </head>
+  <body>
+    <div class='navbar'>
+      <h1>Qwiki - Wikipedia for People in a Hurry</h1>
+      {% for pg in pgs %}
+      <div class="nav-link" style="display: inline">
+        <a href={{ url_for(pg) }}>{{ pgs[pg] }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class='content'>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
